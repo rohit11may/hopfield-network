@@ -146,7 +146,8 @@ class Hopfield(MyWindow):
 
     def create_output(self):
         count = 0
-        while (not self.found_pattern(Pattern(5, self.input_vector))) or count < 1000:
+        while (not self.found_pattern(Pattern(5, self.input_vector))) and count < 1000:
+            print(count)
             count += 1
             next_to_fire = randint(0, 24)
             neuron = self.weights[next_to_fire]
